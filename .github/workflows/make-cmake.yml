@@ -74,7 +74,8 @@ jobs:
       - name: Release
         uses: ncipollo/release-action@v1.21.0
         with:
-          tag: "${{ inputs.cmake_version }}"
+          tag: "cmake-${{ inputs.cmake_version }}"
+          name: "CMake ${{ inputs.cmake_version }}"
           artifacts: cmake-${{ matrix.target }}.${{ inputs.platform == 'windows' && '7z' || 'tar.xz' }}
           allowUpdates: true
           replacesArtifacts: true
